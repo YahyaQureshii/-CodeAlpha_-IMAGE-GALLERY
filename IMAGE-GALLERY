@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        body {
+            background: rgb(219, 218, 218);
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: #555555;
+
+        }
+
+        ul img {
+            width: 120px;
+            height: 60px;
+            padding-right: 850px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style: none;
+            padding: 23px;
+            gap: 80px;
+            font-size: large;
+            font-weight: bold;
+            border: 2px solid #f3f3f3;
+            background-color: grey;
+            color: white;
+        }
+
+        ul li {
+            cursor: pointer;
+        }
+
+        .img-gallery {
+            width: 80%;
+            margin: 100px auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .img-gallery img {
+            width: 100%;
+            cursor: pointer;
+            border: 5px solid white;
+        }
+
+        .img-gallery img:hover {
+            transform: scale(0.8) rotate(-15deg);
+            border-radius: 20px;
+            box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+        }
+
+        .full-img {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+
+        }
+
+        .full-img img {
+            width: 90%;
+            max-width: 500px
+        }
+
+        .full-img span {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 30px;
+            color: #ecf4fb;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="images/img9.jpg" alt="">
+                <li>HOME</li>
+                <li>CONTACT</li>
+                <li>ABOUT</li>
+            </ul>
+            <H1>IMAGE GALLERY</H1>
+        </nav>
+    </header>
+    <main>
+        <div class="full-img" id="fullImgBox">
+            <img src="images/img1.jpg" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+        <div class="img-gallery">
+            <img src="images/img1.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img2.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img3.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img4.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img5.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img6.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img7.jpg" onclick="openfullImg(this.src)">
+            <img src="images/img8.jpg" onclick="openfullImg(this.src)">
+        </div>
+    </main>
+    <footer>
+        <div class="intern">
+
+        </div>
+    </footer>
+
+
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openfullImg(pic) {
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic;
+        }
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
